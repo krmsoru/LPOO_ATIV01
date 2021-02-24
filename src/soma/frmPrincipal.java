@@ -48,6 +48,8 @@ public class frmPrincipal extends javax.swing.JDialog
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(null);
+        setMinimumSize(new java.awt.Dimension(225, 312));
+        setResizable(false);
 
         lblPrimeiroNumero.setText("Digite o primeiro número");
 
@@ -148,67 +150,118 @@ public class frmPrincipal extends javax.swing.JDialog
 
     private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMultiplicarActionPerformed
     {//GEN-HEADEREND:event_btnMultiplicarActionPerformed
-        Double numero1 = 0.0;
-        Double numero2 = 0.0;
+        Double numero1 = 0.0, numero2 = 0.0, resultado = 0.0;
+
         try
         {
             numero1 = Double.parseDouble(txfPrimeiroNumero.getText());
-            numero2 = Double.parseDouble(txfSegundoNumero.getText());
-            lblResultado.setText(String.valueOf(numero1 * numero2));
+
+            try
+            {
+                numero2 = Double.parseDouble(txfSegundoNumero.getText());
+                resultado = numero1 * numero2;
+                lblResultado.setText("Resultado: " + resultado.toString());
+
+            }
+            catch (Exception e)
+            {
+                lblResultado.setText("<html>Digite um número válido<br>no segundo espaço</html>");
+            }
+
         }
         catch (Exception e)
         {
-            lblResultado.setText("Digite um número válido");
+            lblResultado.setText("<html>Digite um número válido<br>no primeiro espaço</html>");
         }
 
     }//GEN-LAST:event_btnMultiplicarActionPerformed
 
     private void btnSomarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSomarActionPerformed
     {//GEN-HEADEREND:event_btnSomarActionPerformed
-        Double numero1 = 0.0;
-        Double numero2 = 0.0;
+        Double numero1 = 0.0, numero2 = 0.0, resultado = 0.0;
+
         try
         {
             numero1 = Double.parseDouble(txfPrimeiroNumero.getText());
-            numero2 = Double.parseDouble(txfSegundoNumero.getText());
-            lblResultado.setText(String.valueOf(numero1 + numero2));
+
+            try
+            {
+                numero2 = Double.parseDouble(txfSegundoNumero.getText());
+                resultado = numero1 + numero2;
+                lblResultado.setText("Resultado: " + resultado.toString());
+
+            }
+            catch (Exception e)
+            {
+                lblResultado.setText("<html>Digite um número válido<br>no segundo espaço</html>");
+            }
+
         }
         catch (Exception e)
         {
-            lblResultado.setText("Digite um número válido");
+            lblResultado.setText("<html>Digite um número válido<br>no primeiro espaço</html>");
         }
     }//GEN-LAST:event_btnSomarActionPerformed
 
     private void btnSubtrairActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSubtrairActionPerformed
     {//GEN-HEADEREND:event_btnSubtrairActionPerformed
-        Double numero1 = 0.0;
-        Double numero2 = 0.0;
+        Double numero1 = 0.0, numero2 = 0.0, resultado = 0.0;
+
         try
         {
             numero1 = Double.parseDouble(txfPrimeiroNumero.getText());
-            numero2 = Double.parseDouble(txfSegundoNumero.getText());
-            lblResultado.setText(String.valueOf(numero1 - numero2));
+
+            try
+            {
+                numero2 = Double.parseDouble(txfSegundoNumero.getText());
+                resultado = numero1 - numero2;
+                lblResultado.setText("Resultado: " + resultado.toString());
+
+            }
+            catch (Exception e)
+            {
+                lblResultado.setText("<html>Digite um número válido<br>no segundo espaço</html>");
+            }
+
         }
         catch (Exception e)
         {
-            lblResultado.setText("Digite um número válido");
+            lblResultado.setText("<html>Digite um número válido<br>no primeiro espaço</html>");
         }
+
     }//GEN-LAST:event_btnSubtrairActionPerformed
 
     private void btnDividirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnDividirActionPerformed
     {//GEN-HEADEREND:event_btnDividirActionPerformed
-        Double numero1 = 0.0;
-        Double numero2 = 0.0;
+        Double numero1 = 0.0, numero2 = 0.0, resultado = 0.0;
+
         try
         {
             numero1 = Double.parseDouble(txfPrimeiroNumero.getText());
-            numero2 = Double.parseDouble(txfSegundoNumero.getText());
-            lblResultado.setText(String.valueOf(numero1 / numero2));
+
+            try
+            {
+                numero2 = Double.parseDouble(txfSegundoNumero.getText());
+                resultado = numero1 / numero2;
+                lblResultado.setText("Resultado: " + resultado.toString());
+
+            }
+            catch (Exception e)
+            {
+                lblResultado.setText("<html>Digite um número válido<br>no segundo espaço</html>");
+            }
+
         }
         catch (Exception e)
         {
-            lblResultado.setText("Digite um número válido");
+            lblResultado.setText("<html>Digite um número válido<br>no primeiro espaço</html>");
         }
+
+        if (resultado == Double.POSITIVE_INFINITY || resultado == Double.NEGATIVE_INFINITY)
+        {
+            lblResultado.setText("Não pode ser dividido por 0");
+        }
+
     }//GEN-LAST:event_btnDividirActionPerformed
 
     /**
